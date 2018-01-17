@@ -1,6 +1,13 @@
 const Discord = require( "discord.js" )
 const client = new Discord.Client()
 
+const secrets = require( "secrets" )
+
+
+module.exports = {
+	userToken:
+}
+
 client.on( "ready", () => {
 	console.log( `Logged in as ${ client.user.tag }!` )
 	// console.log( `Logged in as ${client.user.tag}!` )
@@ -28,18 +35,10 @@ client.on( "ready", () => {
 message.author.bot
 
 client.on( "message", msg => {
-	var msgSplit = msg.content.split( " " )
-	// if ( msg.content.startsWith( "yo bot" ) ) {
-	if ( msgSplit[ 0 ] === "yo" && msgSplit[ 1 ] === "bot" ) {
-		var command = msgSplit[ 2 ]
-		switch ( command ) {
-			case "wtp":
-				test
-				break
-		}
-
+	if ( msg.content.startsWith( "You are now playing" ) ) {
+		msg.guild
 	}
-	
+
 	if ( msg.content === "ping" ) {
 		msg.reply( "Pong!" )
 	} else if ( msg.content === "avatar" ) {
@@ -47,13 +46,4 @@ client.on( "message", msg => {
 	}
 } )
 
-// client.login( "MTYwMTUwNTI1MzE1MTIxMTUz.C7kJ_w.05cIDUTbc7tu8Xkny1Oiubv4dQY" )
-client.login(
-	"Mjk1NDcyNjY5NDk4MDE1NzQ0.C7kYUw.X5RphqIuivRYfGU9UovPtYo_mXQ"
-)
-
-// bot id 295472669498015744
-// bot token Mjk1NDcyNjY5NDk4MDE1NzQ0.C7kYUw.X5RphqIuivRYfGU9UovPtYo_mXQ
-
-// usr id 160150525315121153
-// usr token MTYwMTUwNTI1MzE1MTIxMTUz.C7kJ_w.05cIDUTbc7tu8Xkny1Oiubv4dQY
+client.login( secrets.userToken )
