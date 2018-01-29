@@ -2,16 +2,18 @@
 
 "use strict"
 
-const Discord = require( "discord.js" )
-const client = new Discord.Client()
+const discord = require( "discord.js" )
+const https = require( "https" )
 
 const secrets = require( "./secrets" )
 
-const https = require('https');
+const client = new discord.Client()
 
 client.on( "ready", () => {
 
 } )
+
+
 
 function Board( numLanes, distance ) {
 	// this.lanes = []
@@ -70,15 +72,22 @@ for ( let i = 0; i < 10; i++ ) {
 }
 
 client.on( "message", msg => {
-	if ( msg.content.startsWith( "racebot" ) ) {
-		var msgSplit = msg.split( " " )
-		var msgSplit1 = msgSplit[ 1 ]
-		if ( msgSplit1 === "race" ) {
+	var args = msg.content.split( " " )
+	var arg0 = args[ 0 ]
+	if ( arg0 === "gamesbot" ) {
+		var arg1 = args[ 1 ]
+		if ( msgSplit1 === "" ) {
 
-		} else if () {
+		} else if ( msgSplit1 === "race" ) {
+			if
+		} else if ( msgSplit1 === "y" ) {
+
+		} else if ( msgSplit1 === "z" ) {
+
+		} else if ( msgSplit1 === "x" ) {
 
 		} else {
-
+			// command not recognized
 		}
 	}
 
